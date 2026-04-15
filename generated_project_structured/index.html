@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VividTask - Colourful Todo App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1><i class="fas fa-palette"></i> VividTask</h1>
+            <p class="tagline">Add a splash of colour to your productivity</p>
+        </header>
+
+        <main class="main-content">
+            <section class="add-task-section">
+                <form id="task-form" class="task-form">
+                    <div class="input-group">
+                        <input type="text"
+                               id="task-input"
+                               class="task-input"
+                               placeholder="What needs to be done? (e.g., 'Plan weekend adventure')"
+                               autocomplete="off"
+                               maxlength="100"
+                               required>
+                        <button type="submit" id="add-task-btn" class="add-task-btn" aria-label="Add new task">
+                            <i class="fas fa-plus"></i> Add Task
+                        </button>
+                    </div>
+                    <div class="colour-picker">
+                        <span class="colour-label">Pick a task colour:</span>
+                        <div class="colour-options">
+                            <input type="radio" id="colour-blue" name="task-colour" value="#4dabf7" checked>
+                            <label for="colour-blue" class="colour-option" style="background-color: #4dabf7;" title="Sky Blue"></label>
+
+                            <input type="radio" id="colour-pink" name="task-colour" value="#f783ac">
+                            <label for="colour-pink" class="colour-option" style="background-color: #f783ac;" title="Blush Pink"></label>
+
+                            <input type="radio" id="colour-green" name="task-colour" value="#69db7c">
+                            <label for="colour-green" class="colour-option" style="background-color: #69db7c;" title="Mint Green"></label>
+
+                            <input type="radio" id="colour-purple" name="task-colour" value="#9775fa">
+                            <label for="colour-purple" class="colour-option" style="background-color: #9775fa;" title="Lavender Purple"></label>
+
+                            <input type="radio" id="colour-orange" name="task-colour" value="#ffa94d">
+                            <label for="colour-orange" class="colour-option" style="background-color: #ffa94d;" title="Sunset Orange"></label>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <section class="tasks-section">
+                <div class="tasks-header">
+                    <h2><i class="fas fa-tasks"></i> Your Tasks</h2>
+                    <div id="task-stats" class="task-stats">0 tasks total</div>
+                </div>
+
+                <ul id="task-list" class="task-list">
+                    <!-- Task items will be dynamically inserted here by script.js -->
+                    <li class="task-item placeholder-task">
+                        <div class="task-content">
+                            <p>Your tasks will appear here. Try adding one above!</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="tasks-footer">
+                    <button id="clear-completed-btn" class="clear-completed-btn" disabled>
+                        <i class="fas fa-broom"></i> Clear Completed Tasks
+                    </button>
+                    <div class="hint">
+                        <i class="fas fa-lightbulb"></i> Tip: Click the circle to mark a task complete.
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>Tasks are saved automatically in your browser using <strong>localStorage</strong>.</p>
+            <p class="footer-copyright">VividTask &copy; <span id="current-year">2024</span> | A vibrant todo app</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Simple script to update the copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

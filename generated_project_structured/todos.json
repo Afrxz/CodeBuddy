@@ -1,0 +1,31 @@
+{
+  "todoLists": [
+    {
+      "id": 1,
+      "name": "Default List",
+      "items": [
+        {
+          "id": 1,
+          "text": "Buy milk",
+          "priority": "low",
+          "dueDate": "2024-03-16",
+          "completed": false
+        },
+        {
+          "id": 2,
+          "text": "Walk the dog",
+          "priority": "medium",
+          "dueDate": "2024-03-17",
+          "completed": false
+        },
+        {
+          "id": 3,
+          "text": "Do homework",
+          "priority": "high",
+          "dueDate": "2024-03-18",
+          "completed": false
+        }
+      ]
+    }
+  ]
+}
